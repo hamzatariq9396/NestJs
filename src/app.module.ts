@@ -6,6 +6,7 @@ import { ReportsModule } from './reports/reports.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { User } from './user/user.entity';
 import { Reports } from './reports/report.entity';
+import { JwtModule } from '@nestjs/jwt';
 @Module({
   imports: [
     TypeOrmModule.forRoot({
@@ -16,10 +17,10 @@ import { Reports } from './reports/report.entity';
       password: '',
       database: 'mysql_data',
       synchronize: true,
-      entities: [User,Reports]
+      entities: [User, Reports],
     }),
     UserModule,
-    ReportsModule,
+   ReportsModule,
   ],
   controllers: [AppController],
   providers: [AppService],
